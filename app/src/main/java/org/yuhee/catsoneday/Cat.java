@@ -138,7 +138,7 @@ class Cat {
 	
 		return "My cat is " + this.name + ". " +
 			this.name + " is a " + this.breeds + " cat with " + 
-			this.furColor + " fur and " + this.furPattern " pattern and " + this.eyeColor + " eyes. " +
+			this.furColor + " fur and " + this.furPattern + " pattern and " + this.eyeColor + " eyes. " +
 			this.name + " is a " + this.sex + ". ";
 	}
 }
