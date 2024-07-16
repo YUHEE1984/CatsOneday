@@ -1,3 +1,6 @@
+
+package org.yuhee.catsoneday;
+
 class Cat {
 
 
