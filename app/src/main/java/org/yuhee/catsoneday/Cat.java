@@ -26,89 +26,89 @@ class Cat {
 		
 	
 	public void eatCatFood() {
-                System.out.println( " The cat is eating kibble or snack " ) 
+                System.out.println( " The cat is eating kibble or snack " ); 
 	}
 
 	public void eatChurr() {
-		System.out.println( " The cat is licking Churu " ) 
+		System.out.println( " The cat is licking Churu " );
 	}
 
 	public void drink() {
-                System.out.println( " The cat is drinking water or fat milk " ) 
+                System.out.println( " The cat is drinking water or fat milk " ); 
         }	
 
 
 	public void sleep() {
-                System.out.println( " The cat is sleeping " ) 
+                System.out.println( " The cat is sleeping " );
         }
 
         public void yawn() {
-                System.out.println( " The cat is yawning lazily " )
+                System.out.println( " The cat is yawning lazily " );
         }
 
         public void dozing() {
-                System.out.println( " The cat is dozing " )
+                System.out.println( " The cat is dozing " );
         }
 	
         public void loafing() {
-                System.out.println( " The cat is loafing " )
+                System.out.println( " The cat is loafing " );
         }
 
 	public void lounge() {
-                System.out.println( " The cat is lounging " )
+                System.out.println( " The cat is lounging " );
         }
 
         public void kneading() {
-                System.out.println( " The cat is kneading " )
+                System.out.println( " The cat is kneading " );
         }
 
 	public void stretch() {
-                System.out.println( " The cat is stretching its body " )
+                System.out.println( " The cat is stretching its body " );
         }
 
         public void groom() {
-                System.out.println( " The cat is grooming " )
+                System.out.println( " The cat is grooming " );
         }
 
 
         public void lieDown() {
-                System.out.println( " The cat is curling up " )
+                System.out.println( " The cat is curling up " );
         }
 
 	public void sit() {
-                System.out.println( " The cat is sitting " )
+                System.out.println( " The cat is sitting " );
         }
 
 	public void walk() {
-                System.out.println( " The cat is walking " )
+                System.out.println( " The cat is walking " );
         }
 
         public void run() {
-                System.out.println( " The cat is running " )
+                System.out.println( " The cat is running " );
         }
 
         public void pounce() {
-                System.out.println( " The cat is pouncing on a something " )
+                System.out.println( " The cat is pouncing on a something " );
         }
 
         public void hide() {
-                System.out.println( " The cat is hiding " )
+                System.out.println( " The cat is hiding " );
         }
 
-        public void catch() {
-                System.out.println( " The cat caught something " )
+        public void capture() {
+                System.out.println( " The cat caught something " );
         }
 
         public void punch() {
-                System.out.println( " The cat is pawing at the something" )
+                System.out.println( " The cat is pawing at the something" );
         }
 
         public void playWithToy() {
-                System.out.println( " The cat is playing with toy " )
+                System.out.println( " The cat is playing with toy " );
         }
 
         public void lookAround() {
-                System.out.println( " The cat is gazing " )
+                System.out.println( " The cat is gazing " );
         }
 
 	public void wagTail() {
@@ -118,19 +118,19 @@ class Cat {
 
 
         public void purr() {
-                System.out.println( " The cat is purring contentedly " )
+                System.out.println( " The cat is purring contentedly " );
         }
 
         public void meowing() {
-                System.out.println( " The cat is meowing " )
+                System.out.println( " The cat is meowing " );
         }
 
         public void nuzzling() {
-                System.out.println( " The cat is nuzzling me " )
+                System.out.println( " The cat is nuzzling me " );
         }
 
         public void headButting() {
-                System.out.println( " The cat is head-butting me " )
+                System.out.println( " The cat is head-butting me " );
         }
 
 
@@ -141,3 +141,4 @@ class Cat {
 			this.furColor + " fur and " + this.furPattern " pattern and " + this.eyeColor + " eyes. " +
 			this.name + " is a " + this.sex + ". ";
 	}
+}
