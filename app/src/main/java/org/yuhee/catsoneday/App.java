@@ -19,9 +19,9 @@ public class App {
 
 	System.out.println(myCat.toString());
 		
-	myCat.setWeight(1);
+	myCat.setWeightInKg(1);
 	System.out.println("Let me repeat her name in case you forgot it. Her name is " +  myCat.getName() + 
-		  		". And this is a little secret, but her weight is " + myCat.getWeight() + " kg.");
+		  		". And this is a little secret, but her weight is " + myCat.getWeightInKg() + " kg.");
 
 	myCat.lieDown();
 	myCat.groom();
