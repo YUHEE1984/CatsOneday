@@ -17,7 +17,7 @@ public class Cat {
 	private String sex;
 	private String breeds;
 	private int age;
-	@Sttter
+	@Setter
 	private int weightInKg;
 	private String furColor;
 	private String furPattern;
