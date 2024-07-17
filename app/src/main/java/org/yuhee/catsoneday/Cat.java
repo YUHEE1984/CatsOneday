@@ -1,7 +1,12 @@
 
 package org.yuhee.catsoneday;
 
-class Cat {
+import lombok.AllArgsConstructor;
+
+
+@AllArgsConstructor
+
+public class Cat {
 
 
 	String name;
@@ -13,20 +18,6 @@ class Cat {
 	String furPattern;
 	String eyeColor;
 
-
-	public Cat (String name, String sex, String breeds, int age, int weightInKg, String furColor, String furPattern, String eyeColor) {
-	
-		this.name = name;
-		this.sex = sex;
-		this.breeds = breeds;
-		this.age = age;
-		this.weightInKg = weightInKg;
-		this.furColor = furColor;
-		this.furPattern = furPattern;
-		this.eyeColor = eyeColor;
-
-	} 
-		
 	
 	public void eatCatFood() {
                 System.out.println( " The cat is eating kibble or snack " ); 
