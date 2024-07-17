@@ -1,22 +1,27 @@
 
 package org.yuhee.catsoneday;
 
-import lombok.AllArgsConstructor;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 @AllArgsConstructor
+@Getter
+
 
 public class Cat {
 
 
-	String name;
-	String sex;
-	String breeds;
-	int age;
-	int weightInKg;
-	String furColor;
-	String furPattern;
-	String eyeColor;
+	private String name;
+	private String sex;
+	private String breeds;
+	private int age;
+	@Sttter
+	private int weightInKg;
+	private String furColor;
+	private String furPattern;
+	private String eyeColor;
 
 	
 	public void eatCatFood() {

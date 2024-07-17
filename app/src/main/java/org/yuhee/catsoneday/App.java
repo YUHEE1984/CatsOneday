@@ -16,8 +16,13 @@ public class App {
 	
 	Cat myCat = new Cat( "Kitty", "F", "Egyptian Mau", 1, 1, "silver", "spotted", "gradints of grsy and gold" );
 
+
 	System.out.println(myCat.toString());
-	
+		
+	myCat.setWeight(1);
+	System.out.println("Let me repeat her name in case you forgot it. Her name is " +  myCat.getName() + 
+		  		". And this is a little secret, but her weight is " + myCat.getWeight() + " kg.");
+
 	myCat.lieDown();
 	myCat.groom();
 	myCat.loafing();
