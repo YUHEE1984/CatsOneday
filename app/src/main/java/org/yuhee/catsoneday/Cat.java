@@ -2,6 +2,11 @@
 package org.yuhee.catsoneday;
 
 
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +18,9 @@ import lombok.Setter;
 public class Cat {
 
 
+	private static final Random RANDOM = new Random();	
+
+	@Setter
 	private String name;
 	private String sex;
 	private String breeds;
@@ -140,4 +148,52 @@ public class Cat {
 			this.furColor + " fur and " + this.furPattern + " pattern and " + this.eyeColor + " eyes. " +
 			this.name + " is a " + this.sex + ". ";
 	}
+
+	
+	public ArrayList<Cat> breed(Cat parentsCat) {
+		return parentsCat.handleBreeding( 
+			this.breeds + "," + parentsCat.breeds,
+			this.furColor +  "," + parentsCat.furColor,
+			this.furPattern +  "," + parentsCat.furPattern,
+			this.eyeColor +  "," + parentsCat.eyeColor
+		);
+	}
+
+        private String getRandomElementByShuffling(String options) {
+
+                if (options == null || options.isEmpty()) {
+                        throw new IllegalArgumentException( " Option cannot be null or empty " );
+                }
+
+                ArrayList<String> optionList = new ArrayList<>();
+                Collections.addAll( optionList, options.split( "," ) );
+
+                Collections.shuffle( optionList, RANDOM );
+                return optionList.get(0);
+        }
+
+	private ArrayList<Cat> handleBreeding(String breeds, String furColor, String furPattern, String eyeColor) {
+		
+		ArrayList<Cat> kittens = new ArrayList<Cat>();
+
+		int min = 2;
+		int numberOfKittens = RANDOM.nextInt( 4 ) + min;
+
+
+		for (int i = 0; i < numberOfKittens; i++) {
+			int kittenWeightInKg = RANDOM.nextInt( 3 ) + 3; 
+			String kittenSex = RANDOM.nextInt( 2 ) == 0 ? "F" : "M";
+			String kittenBreeds = getRandomElementByShuffling( breeds );
+			String kittenFurColor = getRandomElementByShuffling( furColor );
+        		String kittenFurPattern = getRandomElementByShuffling( furPattern );
+        		String kittenEyeColor = getRandomElementByShuffling( eyeColor );
+			
+			Cat kitten = new Cat("", kittenSex, kittenBreeds, 0, kittenWeightInKg, kittenFurColor, kittenFurPattern, kittenEyeColor );
+			kittens.add(kitten);
+
+		}
+		return kittens;
+	}
+
+
 }

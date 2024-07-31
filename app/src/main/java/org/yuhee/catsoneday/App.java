@@ -3,36 +3,58 @@
  */
 package org.yuhee.catsoneday;
 
+
+import java.util.ArrayList;
+import java.util.Random;
+
 public class App {
+
+
     public String getGreeting() {
         return " Hello Cats <3 ";
     }
 
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
 
         System.out.println(new App().getGreeting());
 
 	
-	Cat myCat = new Cat( "Kitty", "F", "Egyptian Mau", 1, 1, "silver", "spotted", "gradints of grsy and gold" );
-
-
-	System.out.println(myCat.toString());
+	Cat myCat01 = new Cat( "Mama", "F", "Egyptian Mau", 1, 1, "silver", "spotted", "gradints of grsy and deep green" );
+	System.out.println(myCat01.toString());
 		
-	myCat.setWeightInKg(1);
-	System.out.println("Let me repeat her name in case you forgot it. Her name is " +  myCat.getName() + 
-		  		". And this is a little secret, but her weight is " + myCat.getWeightInKg() + " kg.");
 
-	myCat.lieDown();
-	myCat.groom();
-	myCat.loafing();
-	myCat.lookAround();
-	myCat.purr();
-	myCat.stretch();
-	myCat.pounce();
-	myCat.nuzzling();
-	myCat.meowing();
-	myCat.headButting();
+	myCat01.setWeightInKg(1);
+	System.out.println("Let me repeat her name in case you forgot it. Her name is " +  myCat01.getName() + 
+		  		". And this is a little secret, but her weight is " + myCat01.getWeightInKg() + " kg.");
+
+	myCat01.lieDown();
+	myCat01.groom();
+	myCat01.loafing();
+	myCat01.lookAround();
+	myCat01.purr();
+	myCat01.stretch();
+	myCat01.pounce();
+	myCat01.nuzzling();
+	myCat01.meowing();
+	myCat01.headButting();
+
+
+        Cat myCat02 = new Cat( "Fafa", "M", "Egyptian Mau", 1, 1, "cream", "spotted", "gradints of gold and deep blue" );
+
+
+	ArrayList<Cat> kittens = myCat01.breed(myCat02);
+
+	String[] kittensName = new String[]{"Sava", "jam", "Dal", "Force", "Grog", "Cream"};
+	
+	for(Cat kitten : kittens) {
+		
+		Random random = new Random();
+		String randomName = kittensName[random.nextInt(kittensName.length)];
+		kitten.setName(randomName);
+		System.out.println(kitten.toString());
+	}
+
 
     }
 }
