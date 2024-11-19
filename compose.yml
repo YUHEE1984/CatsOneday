@@ -1,0 +1,52 @@
+services:
+# Top-level key to define multiple containers in Docker Compose
+# Listing each service (container) here
+
+  database:
+  # A logical component that manages a container with a fictitious name to represent the role of the service
+  # Used as an identifier within the Compose file, other containers reference this name
+  # A hostname that other containers on the network can use to access this database
+
+  # Handles all tasks related to storing data, primarily used to run database servers
+
+      image: postgres:latest
+      # Set up running containers using a Docker image with 'this name : postgres(open source database)'
+      # The 'latest' tag specifies to use the latest version of this image
+      environment:
+      # Easily change settings in your application by externally injecting configuration information for use by the application inside the container
+      # Configure the database for the running environment by passing settings such as username, password, API key, host address, etc. when the container (PostgreSQL) starts
+      # Use the same image across development, test, and production environments, but apply different settings through different settings values
+          POSTGRES_PASSWORD: postgres
+          #  Database password
+          POSTGRES_DB: catsoneday
+          # Name of the database to create
+      ports:
+      # Connecting ports between a host and a container so that the container can be accessed from the outside
+      # Requests coming in on port 5432 on the host are forwarded to port 5432 on the container
+        - target: 5432
+          # Ports used by the application inside the container
+          published: 5432
+          # Ports that are open to the outside world from the host (local machine)
+      volumes:
+        - type: volume
+          source: db-data
+          target: /var/lib/postgresql/data
+          # Setting the db-data volume to store all the data that the PostgreSQL database stores in /var/lib/postgresql/data
+          # Mount: Attaches a storage volume to a directory inside the container, making the data continuously available to the container
+
+
+  ui:
+  # Contains the front-end application, which handles interaction with the user (User Interface)
+
+    image: adminer:latest
+    # Create an Adminer web application container
+    # Web interface for database management, providing the ability to connect to databases, view data, or run queries
+    ports:
+      - target:  8080
+        published: 8000
+
+volumes:
+# How to allocate storage space on the host (local computer) system so that data in a container persists
+# Not losing data when a container is deleted or restarted
+  db-data:
+  # The name of the volume, which specifies where to store the container's data, such as databases

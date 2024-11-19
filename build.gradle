@@ -1,0 +1,55 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.3'
+	id 'io.spring.dependency-management' version '1.1.6'
+	id 'io.freefair.lombok' version '8.10'
+	/* Add Lombok Plugin */
+	// 'id' A keyword used by Gradle to specify which plugin to use.
+}
+
+group = 'org.yuhee'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.modelmapper:modelmapper:3.2.1'
+	// Add the ModelMapper dependency
+	// A library that automates mapping between Java objects, useful for converting data between Data Transfer Objects (DTO)and Entity objects
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// Add dependencies related to Spring Data JPA as a starter to enable Java Persistence API (JPA) in Spring Boot
+	// Automatically provides all the basic settings and libraries needed to interact with databases using JPA
+	implementation 'org.postgresql:postgresql'
+	// Adding the PostgreSQL JDBC driver to help Spring Boot applications connect with PostgreSQL databases
+	// This allows Spring Boot to connect to a PostgreSQL database, execute queries, process results, etc
+	implementation 'org.springframework.boot:spring-boot-starter-jersey'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
+	// Connecting Spring Boot with OpenAPI (Swagger)
+	// Automatically generate API documentation (paths, request mappings, parameters, response formats, etc.)
+	// Swagger UI helps you visually document and test your RESTful APIs
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
